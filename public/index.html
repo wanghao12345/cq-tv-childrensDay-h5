@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="keywords" content="六一儿童节！">
+    <meta name="description" content="六一儿童节！">
+    <link rel="dns-prefetch" href="//cangdu.org">
+    <link rel="dns-prefetch" href="//elm.cangdu.org">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>六一儿童节！</title>
+    <link href="https://imgcache.qq.com/open/qcloud/video/tcplayer/tcplayer.css" rel="stylesheet">
+    <!--如果需要在 Chrome 和 Firefox 等现代浏览器中通过 H5 播放 HLS 格式的视频，需要在 tcplayer.v4.min.js 之前引入 hls.js。-->
+    <script src="https://imgcache.qq.com/open/qcloud/video/tcplayer/libs/hls.min.0.12.4.js"></script>
+    <!--播放器脚本文件-->
+    <script src="https://imgcache.qq.com/open/qcloud/video/tcplayer/tcplayer.v4.min.js"></script>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but jt doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script>
+    // 兼容部分ios手机input失焦后页面上移问题
+    (function() {
+      let myFunction
+      let isWXAndIos = isWeiXinAndIos()
+      if (isWXAndIos) { // 既是微信浏览器 又是ios============（因为查到只有在微信环境下，ios手机上才会出现input失去焦点的时候页面被顶起）
+        document.body.addEventListener('focusin', () => { // 软键盘弹起事件
+          clearTimeout(myFunction)
+        })
+        document.body.addEventListener('focusout', () => { // 软键盘关闭事件
+          clearTimeout(myFunction)
+          myFunction = setTimeout(function() {
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'})// 重点  =======当键盘收起的时候让页面回到原始位置
+          }, 200)
+        })
+      }
+    })()
+
+    function isWeiXinAndIos() {
+      // window.navigator.userAgent属性包含了浏览器类型、版本、操作系统类型、浏览器引擎类型等信息，这个属性可以用来判断浏览器类型
+      let ua = '' + window.navigator.userAgent.toLowerCase()
+      // 通过正则表达式匹配ua中是否含有MicroMessenger字符串且是IOS系统
+      let isWeixin = /MicroMessenger/i.test(ua) // 是在微信浏览器
+      let isIos = /\(i[^;]+;( U;)? CPU.+Mac OS X/i.test(ua) // 是IOS系统
+      return isWeixin && isIos
+    }
+  </script>
+</html>

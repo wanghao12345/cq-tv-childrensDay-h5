@@ -1,0 +1,275 @@
+{
+  "id": "1596404",
+  "name": "jiatai",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "H5",
+  "glyphs": [
+    {
+      "icon_id": "706795",
+      "name": "感叹号",
+      "font_class": "gantanhao",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "964020",
+      "name": "叉",
+      "font_class": "cha",
+      "unicode": "e691",
+      "unicode_decimal": 59025
+    },
+    {
+      "icon_id": "1029218",
+      "name": "星号",
+      "font_class": "asterisks-1-copy",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "1105010",
+      "name": "手机",
+      "font_class": "shouji",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "2742671",
+      "name": "添加",
+      "font_class": "tianjia",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    },
+    {
+      "icon_id": "3306617",
+      "name": "头像",
+      "font_class": "touxiang",
+      "unicode": "e66d",
+      "unicode_decimal": 58989
+    },
+    {
+      "icon_id": "4046270",
+      "name": "多层",
+      "font_class": "multilayer1",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "4725090",
+      "name": "维修",
+      "font_class": "weixiu",
+      "unicode": "e67e",
+      "unicode_decimal": 59006
+    },
+    {
+      "icon_id": "5092304",
+      "name": "保养计划",
+      "font_class": "mm_baoyangjihua",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "5585718",
+      "name": "星星 (1)",
+      "font_class": "xingxing1",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "5650915",
+      "name": "三维",
+      "font_class": "sanwei",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "6966897",
+      "name": "订阅",
+      "font_class": "dingyue",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "7127378",
+      "name": "发起",
+      "font_class": "faqi",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "7404297",
+      "name": "故障状态",
+      "font_class": "guzhangzhuangtai",
+      "unicode": "e76e",
+      "unicode_decimal": 59246
+    },
+    {
+      "icon_id": "7404314",
+      "name": "时间",
+      "font_class": "shijian",
+      "unicode": "e77c",
+      "unicode_decimal": 59260
+    },
+    {
+      "icon_id": "7504025",
+      "name": "多层",
+      "font_class": "multilayer",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "7516905",
+      "name": "退出icon ",
+      "font_class": "tuichuicon",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "7540338",
+      "name": "关  闭",
+      "font_class": "guanbi",
+      "unicode": "e6c5",
+      "unicode_decimal": 59077
+    },
+    {
+      "icon_id": "7708180",
+      "name": "首页-选中",
+      "font_class": "yemian-copy-copy",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "7959067",
+      "name": "锁",
+      "font_class": "suo",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "8865459",
+      "name": "星星",
+      "font_class": "xingxing-copy",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "8958746",
+      "name": "定位",
+      "font_class": "zu",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "9134686",
+      "name": "我 的",
+      "font_class": "wodedangxuan",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "9255837",
+      "name": "维修",
+      "font_class": "weixiu2",
+      "unicode": "e7ab",
+      "unicode_decimal": 59307
+    },
+    {
+      "icon_id": "9278750",
+      "name": "设 置",
+      "font_class": "shezhi",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "9547983",
+      "name": "消 息1-01",
+      "font_class": "xiaoxi-",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "9719102",
+      "name": "分类-选中",
+      "font_class": "leimupinleifenleileibie",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "9941604",
+      "name": "向右按钮",
+      "font_class": "you",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "10060579",
+      "name": "密码-看见",
+      "font_class": "mima-kanjian",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "10331405",
+      "name": "GIS-TL_维修点-25",
+      "font_class": "GIS-TL_weixiudian-",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "10417878",
+      "name": "审批",
+      "font_class": "shenpi",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "10469981",
+      "name": "关闭",
+      "font_class": "close",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "10756225",
+      "name": "解绑微信",
+      "font_class": "jiebangweixin",
+      "unicode": "e676",
+      "unicode_decimal": 58998
+    },
+    {
+      "icon_id": "10961882",
+      "name": "check-active",
+      "font_class": "check-active",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "10966281",
+      "name": "点检管理 (1)",
+      "font_class": "dianjianguanli",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "11131698",
+      "name": "向下",
+      "font_class": "down2",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "11325529",
+      "name": "保养",
+      "font_class": "-baoyang",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "12201734",
+      "name": "跳转 前往 右箭头 向右 下一步 线性 ",
+      "font_class": "tiaozhuanqianwangyoujiantouxiangyouxiayibuxianxing",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    }
+  ]
+}
