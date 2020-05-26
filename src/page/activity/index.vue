@@ -21,10 +21,11 @@
             </van-swipe>
         </div>
         <div class="steg-wrapper" v-show="stegStatus === 'STEG_TWO'">
-            <PageFive></PageFive>    
+            <PageFive @handleChangeSteg="handleChangeSteg"></PageFive>    
         </div>
-
-    
+       <div class="steg-wrapper" v-show="stegStatus === 'STEG_THREE'">
+            <PageSix></PageSix>    
+        </div>
     </div>
 </template>
 
@@ -36,6 +37,7 @@
     import PageThree from './components/PageThree'
     import PageFour from './components/PageFour'
     import PageFive from './components/PageFive'
+    import PageSix from './components/PageSix'
 
     Vue.use(Swipe);
     Vue.use(SwipeItem);
@@ -46,7 +48,8 @@
             PageTwo,
             PageThree,
             PageFour,
-            PageFive
+            PageFive,
+            PageSix
         },
         data () {
             return {

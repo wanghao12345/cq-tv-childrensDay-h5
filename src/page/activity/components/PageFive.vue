@@ -29,8 +29,8 @@
                     <p class="tip">若视频大小超过50M，请投递至邮箱cenzonger@163.com(姓名+电话+视频名称)</p>
                     <p class="warn">投稿截至：2020年6月5日</p>
                 </div>
-                <div class="btn-box">
-                    <img :src="btnIcon" alt="">
+                <div class="btn-box" @click="handleChangeSteg">
+                    <img :src="btnIcon" alt="btnIcon">
                 </div>
             </div>
         </div>
@@ -54,6 +54,14 @@
         },
         mounted() {
 
+        },
+        methods: {
+            /**
+             * 选择下一页
+             */
+            handleChangeSteg() {
+                this.$emit('handleChangeSteg', 'STEG_THREE')
+            }
         }
     }
 </script>
