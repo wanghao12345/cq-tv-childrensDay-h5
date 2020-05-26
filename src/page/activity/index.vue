@@ -1,16 +1,22 @@
 <template>
     <div class="activity-wrapper">
-        <van-swipe 
-            style="height: 100%;" 
+        <van-swipe
+            style="height: 100%;"
             vertical
             :loop="false"
         >
             <van-swipe-item>
                 <PageOne></PageOne>
             </van-swipe-item>
-            <van-swipe-item>2</van-swipe-item>
-            <van-swipe-item>3</van-swipe-item>
-            <van-swipe-item>4</van-swipe-item>
+            <van-swipe-item>
+                <PageTwo></PageTwo>
+            </van-swipe-item>
+            <van-swipe-item>
+                <PageThree></PageThree>
+            </van-swipe-item>
+            <van-swipe-item>
+                <PageFour></PageFour>
+            </van-swipe-item>
         </van-swipe>
     </div>
 </template>
@@ -19,21 +25,27 @@
     import Vue from 'vue';
     import { Swipe, SwipeItem } from 'vant';
     import PageOne from './components/PageOne'
+    import PageTwo from './components/PageTwo'
+    import PageThree from './components/PageThree'
+    import PageFour from './components/PageFour'
 
     Vue.use(Swipe);
     Vue.use(SwipeItem);
     export default {
         name: "Activity",
         components: {
-            PageOne
+            PageOne,
+            PageTwo,
+            PageThree,
+            PageFour
         },
         data () {
             return {
-           
+
             }
         },
         mounted() {
-       
+
         }
     }
 </script>
