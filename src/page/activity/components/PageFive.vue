@@ -42,7 +42,7 @@
     import btnIcon from '@/assets/img/activity/page4/btn.png'
     import uploadIcon from '@/assets/img/activity/page5/upload-icon.png'
     export default {
-        name: "PageFour",
+        name: "PageFive",
         components: {
             Layout
         },
