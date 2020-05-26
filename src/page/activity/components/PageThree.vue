@@ -1,13 +1,21 @@
 <template>
     <Layout>
         <div class="page-wrapper">
-
+            <div class="text">
+                <img :src="textImg" alt="textImg">
+            </div>
+            <div class="book">
+                <img :src="bookImg" alt="bookImg">
+            </div>
+            <p>(购书卡以食物为准)</p>
         </div>
     </Layout>
 </template>
 
 <script>
     import Layout from "@/page/activity/components/Layout";
+    import textImg from '@/assets/img/activity/page3/text.png'
+    import bookImg from '@/assets/img/activity/page3/book.png'
     export default {
         name: "PageThree",
         components: {
@@ -15,7 +23,8 @@
         },
         data () {
             return {
-
+                textImg,
+                bookImg
             }
         },
         mounted() {
@@ -29,5 +38,26 @@
        width: 100%;
        height: 100%;
        position: relative;
+       .text{
+           width: 100%;
+           margin-top: 4rem;
+           margin-bottom: 2rem;
+           img{
+                width: 100%;
+           }
+       }
+       .book{
+           width: 8rem;
+           margin: 0rem auto;
+           img{
+                width: 100%;
+           }
+       }
+       p{
+           text-align: center;
+           font-size: 0.6rem;
+           color: black;
+           font-weight: bold;
+       }
    }
 </style>

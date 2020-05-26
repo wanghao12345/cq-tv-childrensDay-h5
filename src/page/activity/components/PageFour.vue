@@ -22,10 +22,10 @@
                 <div class="btn-box">
                     <img :src="btnIcon" alt="">
                 </div>
-            </div>
-            <div class="qr-code-box">
-                <img :src="QrCodeIcon" alt="二维码">
-                <p>下载来点app</p>
+                 <div class="qr-code-box">
+                    <img :src="QrCodeIcon" alt="二维码">
+                    <p>下载来点app</p>
+                </div>
             </div>
         </div>
     </Layout>
@@ -57,13 +57,12 @@
        width: 100%;
        height: 100%;
        position: relative;
+       box-sizing: border-box;
+       padding: 3rem 0 2rem 0;
        .main-content-box{
-           position: absolute;
-           left: 0;
-           bottom: 7rem;
            width: 100%;
-           height: 17rem;
-           background-color: white;
+           height: 100%;
+          background:rgba(249,241,225,0.8);
            border-radius: 0.5rem;
            .item-box{
                width: 100%;
@@ -101,10 +100,7 @@
            }
        }
        .qr-code-box{
-           position: absolute;
-           left: 50%;
-           margin-left: -2.25rem;
-           bottom: 0.5rem;
+           margin: 0 auto;
            width: 5rem;
            height: 6rem;
            img{
