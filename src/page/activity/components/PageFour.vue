@@ -19,7 +19,7 @@
                     <p>时间5分钟以内，大小50M以内，格式为MP4或MOV</p>
                     <p class="min">若视频大小超过50M，请投递至邮箱cenzonger@163.com</p>
                 </div>
-                <div class="btn-box">
+                <div class="btn-box" @click="handleChangeSteg">
                     <img :src="btnIcon" alt="">
                 </div>
                  <div class="qr-code-box">
@@ -48,6 +48,14 @@
         },
         mounted() {
 
+        },
+        methods: {
+            /**
+             * 选择下一页
+             */
+            handleChangeSteg() {
+                this.$emit('handleChangeSteg', 'STEG_TWO')
+            }
         }
     }
 </script>
@@ -62,12 +70,14 @@
        .main-content-box{
            width: 100%;
            height: 100%;
-          background:rgba(249,241,225,0.8);
+           background:rgba(249,241,225,0.8);
            border-radius: 0.5rem;
+           box-sizing: border-box;
+           padding: 0.5rem;
            .item-box{
                width: 100%;
                box-sizing: border-box;
-               padding: 0.2rem 0.5rem;
+               padding: 0.3rem 0.5rem;
                h3{
                    font-size:0.7rem;
                    font-family:HappyZcool-2016;

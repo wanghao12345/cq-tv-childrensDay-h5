@@ -1,23 +1,30 @@
 <template>
     <div class="activity-wrapper">
-        <van-swipe
-            style="height: 100%;"
-            vertical
-            :loop="false"
-        >
-            <van-swipe-item>
-                <PageOne></PageOne>
-            </van-swipe-item>
-            <van-swipe-item>
-                <PageTwo></PageTwo>
-            </van-swipe-item>
-            <van-swipe-item>
-                <PageThree></PageThree>
-            </van-swipe-item>
-            <van-swipe-item>
-                <PageFour></PageFour>
-            </van-swipe-item>
-        </van-swipe>
+        <div class="steg-wrapper" v-show="stegStatus === 'STEG_ONE'">
+            <van-swipe
+                style="height: 100%;"
+                vertical
+                :loop="false"
+            >
+                <van-swipe-item>
+                    <PageOne></PageOne>
+                </van-swipe-item>
+                <van-swipe-item>
+                    <PageTwo></PageTwo>
+                </van-swipe-item>
+                <van-swipe-item>
+                    <PageThree></PageThree>
+                </van-swipe-item>
+                <van-swipe-item>
+                    <PageFour @handleChangeSteg="handleChangeSteg"></PageFour>
+                </van-swipe-item>
+            </van-swipe>
+        </div>
+        <div class="steg-wrapper" v-show="stegStatus === 'STEG_TWO'">
+            <PageFive></PageFive>    
+        </div>
+
+    
     </div>
 </template>
 
@@ -28,6 +35,7 @@
     import PageTwo from './components/PageTwo'
     import PageThree from './components/PageThree'
     import PageFour from './components/PageFour'
+    import PageFive from './components/PageFive'
 
     Vue.use(Swipe);
     Vue.use(SwipeItem);
@@ -37,15 +45,24 @@
             PageOne,
             PageTwo,
             PageThree,
-            PageFour
+            PageFour,
+            PageFive
         },
         data () {
             return {
-
+                stegStatus: 'STEG_ONE'
             }
         },
         mounted() {
 
+        },
+        methods: {
+            /**
+             * 改变页面显示
+             */
+            handleChangeSteg(val) {
+                this.stegStatus = val
+            }
         }
     }
 </script>
@@ -54,5 +71,9 @@
    .activity-wrapper{
        width: 100%;
        height: 100%;
+       .steg-wrapper{
+            width: 100%;
+            height: 100%;
+       }
    }
 </style>
