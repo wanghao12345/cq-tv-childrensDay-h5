@@ -23,6 +23,10 @@
                     <img :src="btnIcon" alt="">
                 </div>
             </div>
+            <div class="qr-code-box">
+                <img :src="QrCodeIcon" alt="二维码">
+                <p>下载来点app</p>
+            </div>
         </div>
     </Layout>
 </template>
@@ -30,6 +34,7 @@
 <script>
     import Layout from "@/page/activity/components/Layout";
     import btnIcon from '@/assets/img/activity/page4/btn.png'
+    import QrCodeIcon from '@/assets/img/activity/page4/qrcode.png'
     export default {
         name: "PageFour",
         components: {
@@ -37,7 +42,8 @@
         },
         data () {
             return {
-              btnIcon
+              btnIcon,
+              QrCodeIcon
             }
         },
         mounted() {
@@ -54,7 +60,7 @@
        .main-content-box{
            position: absolute;
            left: 0;
-           bottom: 6rem;
+           bottom: 7rem;
            width: 100%;
            height: 17rem;
            background-color: white;
@@ -92,6 +98,25 @@
                    width: 100%;
                    height: 100%;
                }
+           }
+       }
+       .qr-code-box{
+           position: absolute;
+           left: 50%;
+           margin-left: -2.25rem;
+           bottom: 0.5rem;
+           width: 5rem;
+           height: 6rem;
+           img{
+               width: 5rem;
+               height: 5rem;
+           }
+           p{
+               font-size:0.6rem;
+               font-family:PingFang SC;
+               font-weight:bold;
+               color:rgba(255,255,255,1);
+               text-align: center;
            }
        }
    }
