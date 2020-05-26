@@ -1,7 +1,12 @@
 <template>
     <Layout>
         <div class="page-wrapper">
-            <div class="title"></div>
+            <div class="title">
+                <img :src="titleImg" alt="title">
+            </div>
+            <div class="nav">
+                <img :src="navImg" alt="nav">
+            </div>
             <div class="video">
 
             </div>
@@ -11,6 +16,8 @@
 
 <script>
     import Layout from "@/page/activity/components/Layout";
+    import titleImg from '@/assets/img/activity/page1/title.png'
+    import navImg from '@/assets/img/activity/page1/nav-bg.png'
     export default {
         name: "PageOne",
         components: {
@@ -18,7 +25,8 @@
         },
         data () {
             return {
-           
+                titleImg,
+                navImg
             }
         },
         mounted() {
@@ -33,24 +41,24 @@
        height: 100%;
        position: relative;
        .title{
-            width: 16rem;
-            height: 2.6rem;
-            background: white;
-            position: absolute;
-            border-radius: 3rem;
-            left: 50%;
-            margin-left: -8rem;
-            top: 10rem;
+           margin-top: 3rem;
+           img{
+               width: 100%;
+           }
+       }
+       .nav{
+           width: 10rem;
+           margin: 0 auto;
+           img{
+               width: 100%;
+           }
        }
        .video{
-            position: absolute;
-            left: 50%;
-            margin-left: -8.5rem;
-            bottom: 4rem;
-            width: 17rem;
-            height: 13rem;
-            background: url('../../../assets/img/activity/page1/video.png');
-            background-size: 100% 100%;
+            width: 16rem;
+            height: 10rem;
+            background-color: white;
+            border-radius: 0.5rem;
+            margin: 0.5rem auto;
        }
    }
 </style>

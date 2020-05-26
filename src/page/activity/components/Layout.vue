@@ -2,7 +2,7 @@
     <div class="layout-wrapper">
         <div class="layout-person">
             <div class="layout-header">
-                <img :src="logoIcon" alt="logo">
+                <img :src="logoIcon" alt="logo" />
             </div>
             <div class="layout-body">
                 <slot></slot>
@@ -42,7 +42,7 @@
     @import "../../../style/mixin";
     .layout-wrapper{
         @include wh(100%, 100vh);
-        background: url("../../../assets/img/activity/page1/page-bg.png");
+        background: url("../../../assets/img/activity/common/bg.png");
         background-size: 100% 100%;
         .layout-person{
             @include wh(100%, 100vh);
@@ -70,6 +70,7 @@
             left: 0;
             img{
                 width: 6rem;
+                display: none;
             }
         }
         .layout-body{
