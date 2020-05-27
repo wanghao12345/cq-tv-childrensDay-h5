@@ -100,7 +100,7 @@
                     wx.ready(() => {
                         //分享朋友圈
                         wx.onMenuShareTimeline({
-                            title: '随手拍春天：上电视头条！赢GoPro！',
+                            title: '大小儿童过六一｜寻找童年的“耍事”',
                             link: shareLink,
                             imgUrl: wxShare,// 自定义图标
                             trigger: function (res) {
@@ -120,8 +120,8 @@
                         });
                         //分享给好友
                         wx.onMenuShareAppMessage({
-                            title: '随手拍春天：上电视头条！赢GoPro！', // 分享标题
-                            desc: '重庆有线视频头条有奖征集春游段视频！', // 分享描述
+                            title: '大小儿童过六一｜寻找童年的“耍事”', // 分享标题
+                            desc: '小时候的游园“耍事”，是我们回到，童年的时光机', // 分享描述
                             link: shareLink, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
                             imgUrl: wxShare, // 自定义图标
                             type: 'link', // 分享类型,music、video或link，不填默认为link
