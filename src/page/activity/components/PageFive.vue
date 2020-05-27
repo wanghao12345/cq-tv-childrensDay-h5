@@ -23,9 +23,12 @@
                 <div class="item-box">
                     <h3>上传短视频</h3>
                     <div class="upload-box">
-                        <img :src="uploadIcon" alt="uploadIcon">
+                        <div class="img-box">
+                            <img :src="uploadIcon" alt="uploadIcon" v-if="!params.video">
+                            <img :src="reUploadIcon" alt="reUploadIcon" v-if="params.video">
+                            <input class="video" type="file" ref="uploadFile" accept="video/*" @change="afterRead($event)">
+                        </div>
                         <p class="min">时间5分钟以内，大小50M以内，格式为MP4或MOV</p>
-                        <input class="video" type="file" ref="uploadFile" accept="video/*" @change="afterRead($event)">
                     </div>
                     <p class="tip">若视频大小超过50M，请投递至邮箱cenzonger@163.com(姓名+电话+视频名称)</p>
                     <p class="warn">投稿截至：2020年6月5日</p>
@@ -47,6 +50,7 @@
     import Layout from "@/page/activity/components/Layout";
     import btnIcon from '@/assets/img/activity/page5/btn.png'
     import uploadIcon from '@/assets/img/activity/page5/upload-icon.png'
+    import reUploadIcon from '@/assets/img/activity/page5/reUpload.png'
     import axios from 'axios'
 
     Vue.use(Notify).use(Loading)
@@ -59,6 +63,7 @@
             return {
                 btnIcon,
                 uploadIcon,
+                reUploadIcon,
                 params: {
                     videoname: '',
                     name: '',
@@ -218,21 +223,31 @@
                 .upload-box {
                     display: flex;
                     margin-bottom: 0.5rem;
-                    position: relative;
-                    .video {
-                        position: absolute;
-                        width: 5rem;
-                        height: 5rem;
-                        left: 0;
-                        top: 0;
-                        opacity: 0;
-                    }
-                    img {
+                    .img-box{
                         width: 5rem;
                         height: 5rem;
                         margin-right: 0.5rem;
+                        position: relative;
+                        background-color: white;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 0.3rem;
+                        img {
+                            width: 2rem;
+                            height: 2rem;
+                        }
+                        .video {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            left: 0;
+                            top: 0;
+                            opacity: 0;
+                        }
                     }
                     p {
+                        flex: 1;
                         font-size: 0.55rem;
                         font-family: HappyZcool-2016;
                         font-weight: 400;
