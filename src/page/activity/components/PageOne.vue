@@ -7,7 +7,7 @@
             <div class="nav">
                 <img :src="navImg" alt="nav">
             </div>
-            <div class="video">
+            <div class="video" @click="handlePlayer">
 
             </div>
         </div>
@@ -30,8 +30,20 @@
             }
         },
         mounted() {
-       
+
+        },
+        methods: {
+            handlePlayer () {
+                this.$router.push({
+                    path: '/player',
+                    query: {
+                        // url: this.video
+                        url: ''
+                    }
+                })
+            },
         }
+
     }
 </script>
 

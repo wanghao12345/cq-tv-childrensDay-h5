@@ -23,21 +23,24 @@
         <div class="steg-wrapper" v-show="stegStatus === 'STEG_TWO'">
             <PageFive @handleChangeSteg="handleChangeSteg"></PageFive>
         </div>
-       <div class="steg-wrapper" v-show="stegStatus === 'STEG_THREE'">
+        <div class="steg-wrapper" v-show="stegStatus === 'STEG_THREE'">
             <PageSix></PageSix>
         </div>
     </div>
 </template>
 
 <script>
+    import axios from 'axios'
     import Vue from 'vue';
-    import { Swipe, SwipeItem } from 'vant';
+    import {Swipe, SwipeItem} from 'vant';
     import PageOne from './components/PageOne'
     import PageTwo from './components/PageTwo'
     import PageThree from './components/PageThree'
     import PageFour from './components/PageFour'
     import PageFive from './components/PageFive'
     import PageSix from './components/PageSix'
+
+    const wx = require('weixin-js-sdk')
 
     Vue.use(Swipe);
     Vue.use(SwipeItem);
@@ -51,13 +54,13 @@
             PageFive,
             PageSix
         },
-        data () {
+        data() {
             return {
                 stegStatus: 'STEG_ONE'
             }
         },
         mounted() {
-
+            this.share()
         },
         methods: {
             /**
@@ -65,19 +68,100 @@
              */
             handleChangeSteg(val) {
                 this.stegStatus = val
-            }
+            },
+            /**
+             * 分享
+             */
+            share() {
+                let link = window.location.href
+                console.log('link:', link);
+
+                const wxShare = 'https://weixin.phoenix-resonance.com/hd/pages/201804video/dist/img/60bf93e1b9db0932249724900c9f3d7.png'
+                this.loading = true
+                axios.get('https://weixin.phoenix-resonance.com/hd/H20191111kj/getWeiXinJsApiServer.do?url=' + encodeURIComponent(link)).then(res => {
+                    // alert(JSON.stringify(res))
+                    const data = res.data
+                    console.log(data);
+                    wx.config({
+                        debug: false,////生产环境需要关闭debug模式
+                        appId: data.appid,//appId通过微信服务号后台查看
+                        timestamp: data.time,//生成签名的时间戳
+                        nonceStr: data.nonceStr,//生成签名的随机字符串
+                        signature: data.signature,//签名
+                        jsApiList: [//需要调用的JS接口列表
+                            'onMenuShareTimeline',//分享给好友
+                            'onMenuShareAppMessage'//分享到朋友圈
+                        ]
+                    });
+
+                    const shareLink = 'https://weixin.phoenix-resonance.com/hd/pages/201804video/dist/index.html'
+                    // const shareLink = location.href
+
+                    wx.ready(() => {
+                        //分享朋友圈
+                        wx.onMenuShareTimeline({
+                            title: '随手拍春天：上电视头条！赢GoPro！',
+                            link: shareLink,
+                            imgUrl: wxShare,// 自定义图标
+                            trigger: function (res) {
+                                // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回.
+                                // alert('click shared');
+                            },
+                            success: function (res) {
+                                // alert('shared success');
+                                //some thing you should do
+                            },
+                            cancel: function (res) {
+                                // alert('shared cancle');
+                            },
+                            fail: function (res) {
+                                // alert(JSON.stringify(res));
+                            }
+                        });
+                        //分享给好友
+                        wx.onMenuShareAppMessage({
+                            title: '随手拍春天：上电视头条！赢GoPro！', // 分享标题
+                            desc: '重庆有线视频头条有奖征集春游段视频！', // 分享描述
+                            link: shareLink, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                            imgUrl: wxShare, // 自定义图标
+                            type: 'link', // 分享类型,music、video或link，不填默认为link
+                            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                            success: function () {
+                                // 用户确认分享后执行的回调函数
+                                // alert('shared success');
+                            },
+                            cancel: function () {
+                                // 用户取消分享后执行的回调函数
+                                // alert('shared cancle');
+                            },
+                            fail: function (res) {
+                                // alert(JSON.stringify(res));
+                            }
+                        });
+                        wx.error(function (res) {
+                            // alert(JSON.stringify(res));
+                        });
+                    })
+
+                }).finally(() => {
+                    this.loading = false
+                }).catch(() => {
+                    // alert('请求分享参数出错')
+                })
+            },
         }
     }
 </script>
 
 <style scoped lang="scss">
-  @import "../../assets/css/happyFont.css";
-   .activity-wrapper{
-       width: 100%;
-       height: 100%;
-       .steg-wrapper{
+    @import "../../assets/css/happyFont.css";
+
+    .activity-wrapper {
+        width: 100%;
+        height: 100%;
+        .steg-wrapper {
             width: 100%;
             height: 100%;
-       }
-   }
+        }
+    }
 </style>

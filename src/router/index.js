@@ -18,16 +18,16 @@ const router = new Router({
       },
       component: resolve => require(['@/page/activity'], resolve)
     },
-    {
-      path: '/home',
-      name: 'Home',
-      meta: {
-        title: '首页',
-        toolBar: true,
-        keepAlive: true
-      },
-      component: resolve => require(['@/page/home'], resolve)
-    },
+    // {
+    //   path: '/home',
+    //   name: 'Home',
+    //   meta: {
+    //     title: '首页',
+    //     toolBar: true,
+    //     keepAlive: true
+    //   },
+    //   component: resolve => require(['@/page/home'], resolve)
+    // },
     {
       path: '/upload',
       name: 'Upload',
