@@ -39,7 +39,7 @@
 
 <script>
     import Layout from "@/page/activity/components/Layout";
-    import btnIcon from '@/assets/img/activity/page4/btn.png'
+    import btnIcon from '@/assets/img/activity/page5/btn.png'
     import uploadIcon from '@/assets/img/activity/page5/upload-icon.png'
     export default {
         name: "PageFive",
@@ -104,16 +104,16 @@
                         font-weight:400;
                         color:rgba(31,33,37,1);
                    }
-                    input::-webkit-input-placeholder { /* Chrome/Opera/Safari */ 
+                    input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
                         color:rgba(31,33,37,1);
                     }
-                    input::-moz-placeholder { /* Firefox 19+ */  
+                    input::-moz-placeholder { /* Firefox 19+ */
                         color:rgba(31,33,37,1);
                     }
-                    input:-ms-input-placeholder { /* IE 10+ */ 
+                    input:-ms-input-placeholder { /* IE 10+ */
                         color:rgba(31,33,37,1);
                     }
-                    input:-moz-placeholder { /* Firefox 18- */ 
+                    input:-moz-placeholder { /* Firefox 18- */
                         color:rgba(31,33,37,1);
                     }
                }
@@ -149,12 +149,11 @@
                }
            }
            .btn-box{
-               width: 6rem;
+               width: 7rem;
                height: 3rem;
-               margin: 0 auto;
+               margin: 1rem auto 0 auto;
                img{
                    width: 100%;
-                   height: 100%;
                }
            }
        }

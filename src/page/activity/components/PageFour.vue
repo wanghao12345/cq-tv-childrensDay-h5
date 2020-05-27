@@ -100,12 +100,11 @@
                }
            }
            .btn-box{
-               width: 6rem;
+               width: 7rem;
                height: 3rem;
-               margin: 0 auto;
+               margin: 1rem auto 0 auto;
                img{
                    width: 100%;
-                   height: 100%;
                }
            }
        }
