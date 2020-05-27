@@ -85,7 +85,7 @@
                box-sizing: border-box;
                padding: 0.3rem 0.5rem;
                h3{
-                   font-size: 0.8rem;
+                   font-size: 0.9rem;
                    font-family:HappyZcool-2016;
                    font-weight:bold;
                    color:rgba(251,45,45,1);

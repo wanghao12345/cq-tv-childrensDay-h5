@@ -21,10 +21,10 @@
             </van-swipe>
         </div>
         <div class="steg-wrapper" v-show="stegStatus === 'STEG_TWO'">
-            <PageFive @handleChangeSteg="handleChangeSteg"></PageFive>    
+            <PageFive @handleChangeSteg="handleChangeSteg"></PageFive>
         </div>
        <div class="steg-wrapper" v-show="stegStatus === 'STEG_THREE'">
-            <PageSix></PageSix>    
+            <PageSix></PageSix>
         </div>
     </div>
 </template>
@@ -71,6 +71,7 @@
 </script>
 
 <style scoped lang="scss">
+  @import "../../assets/css/happyFont.css";
    .activity-wrapper{
        width: 100%;
        height: 100%;

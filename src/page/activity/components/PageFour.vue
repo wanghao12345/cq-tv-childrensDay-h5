@@ -79,13 +79,14 @@
                box-sizing: border-box;
                padding: 0.3rem 0.5rem;
                h3{
-                   font-size:0.7rem;
+                   font-size:0.9rem;
                    font-family:HappyZcool-2016;
                    font-weight:bold;
                    color:rgba(251,45,45,1);
+                   line-height:1.3rem;
                }
                p{
-                   font-size:0.7rem;
+                   font-size:0.75rem;
                    font-family:HappyZcool-2016;
                    font-weight:400;
                    color:rgba(31,33,37,1);
@@ -102,7 +103,7 @@
            .btn-box{
                width: 7rem;
                height: 3rem;
-               margin: 1rem auto 0 auto;
+               margin: 0.5rem auto 0 auto;
                img{
                    width: 100%;
                }
