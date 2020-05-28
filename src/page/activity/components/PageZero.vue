@@ -1,9 +1,7 @@
 <template>
-    <Layout>
-        <div class="page-wrapper">
-            <img :src="contentImg" alt="contentImg">
-        </div>
-    </Layout>
+    <div class="page-wrapper">
+            <!-- <img :src="contentImg" alt="contentImg"> -->
+    </div>
 </template>
 
 <script>
@@ -26,11 +24,19 @@
 </script>
 
 <style scoped lang="scss">
+    /deep/.layout-wrapper{
+        width: 100%;
+        height: 100%;
+        background: url('../../../assets/img/activity/page0/bg.jpg');
+        background-size: 100% 100%;
+    }
    .page-wrapper{
-       width: 100%;
-       height: 100%;
-       position: relative;
-       box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        box-sizing: border-box;
+        background: url('../../../assets/img/activity/page0/bg.jpg');
+        background-size: 100% 100%;
        img{
             position: absolute;
             width: 16rem;
