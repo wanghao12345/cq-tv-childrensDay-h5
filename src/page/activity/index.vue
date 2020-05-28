@@ -136,7 +136,7 @@
                         ]
                     });
 
-                    const shareLink = 'https://weixin.phoenix-resonance.com/hd/pages/201804video/dist/index.html'
+                    const shareLink = 'https://weixin.phoenix-resonance.com/hd/pages/201805video/dist/index.html'
                     // const shareLink = location.href
 
                     wx.ready(() => {
