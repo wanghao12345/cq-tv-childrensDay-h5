@@ -55,7 +55,8 @@
     import micOn from '@/assets/img/common/btn_music_off.png'
     import micOff from '@/assets/img/common/btn_music_on.png'
 
-    import music from '@/assets/img/common/music.mp3'
+    // import music from '@/assets/img/common/music.mp3'
+    import music from '@/assets/img/common/Dunn.mp3'
 
     const wx = require('weixin-js-sdk')
 
