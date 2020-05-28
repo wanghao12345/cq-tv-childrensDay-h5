@@ -27,7 +27,7 @@
             <PageFive @handleChangeSteg="handleChangeSteg"></PageFive>
         </div>
         <div class="steg-wrapper" v-show="stegStatus === 'STEG_THREE'">
-            <PageSix></PageSix>
+            <PageSix @handleChangeSteg="handleChangeSteg"></PageSix>
         </div>
         <audio controls="controls" autoplay preload loop class="audio" id="bgmusic">
             <source :src="music" type="audio/mpeg">
