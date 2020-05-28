@@ -37,7 +37,7 @@
                     <img :src="btnIcon" alt="btnIcon">
                 </div>
             </div>
-             <div class="btn-wrapper" @click="handleBackClick">
+             <div class="btn-wrapper" @click="handleBackClick" style="top: 1.3rem">
                 <img :src="backIcon" alt="btnIcon">
             </div>
             <van-loading
