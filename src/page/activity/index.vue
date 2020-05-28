@@ -118,7 +118,7 @@
                 let link = window.location.href
                 console.log('link:', link);
 
-                const wxShare = 'https://weixin.phoenix-resonance.com/hd/pages/201804video/dist/img/60bf93e1b9db0932249724900c9f3d7.png'
+                const wxShare = 'https://weixin.phoenix-resonance.com/hd/pages/201805video/dist/ba.jpg'
                 this.loading = true
                 axios.get('https://weixin.phoenix-resonance.com/hd/H20191111kj/getWeiXinJsApiServer.do?url=' + encodeURIComponent(link)).then(res => {
                     // alert(JSON.stringify(res))
