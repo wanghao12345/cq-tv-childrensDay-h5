@@ -15,7 +15,6 @@
             <van-popup 
                 v-model="showShare" 
                 position="top"
-                :close-on-click-overlay="false"
             >
                 <div class="share-box">
                     <img :src="ShareIcon" alt="ShareIcon">

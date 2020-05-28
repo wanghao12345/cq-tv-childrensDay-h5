@@ -215,16 +215,16 @@
                         color: rgba(31, 33, 37, 1);
                     }
                     input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-                        color: rgba(31, 33, 37, 1);
+                        color: rgba(31, 33, 37, 0.5);
                     }
                     input::-moz-placeholder { /* Firefox 19+ */
-                        color: rgba(31, 33, 37, 1);
+                        color: rgba(31, 33, 37, 0.5);
                     }
                     input:-ms-input-placeholder { /* IE 10+ */
-                        color: rgba(31, 33, 37, 1);
+                        color: rgba(31, 33, 37, 0.5);
                     }
                     input:-moz-placeholder { /* Firefox 18- */
-                        color: rgba(31, 33, 37, 1);
+                        color: rgba(31, 33, 37, 0.5);
                     }
                 }
                 .upload-box {
