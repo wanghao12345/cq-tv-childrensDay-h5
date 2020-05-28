@@ -37,7 +37,13 @@
                     <img :src="btnIcon" alt="btnIcon">
                 </div>
             </div>
+            <van-loading
+                class="loading"
+                color="#6ACA71"
+                v-if="loading"
+            />
         </div>
+    
     </Layout>
 </template>
 
@@ -64,6 +70,7 @@
                 btnIcon,
                 uploadIcon,
                 reUploadIcon,
+                loading: false,
                 params: {
                     videoname: '',
                     name: '',
