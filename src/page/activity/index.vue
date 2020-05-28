@@ -26,6 +26,14 @@
         <div class="steg-wrapper" v-show="stegStatus === 'STEG_THREE'">
             <PageSix></PageSix>
         </div>
+        <audio controls="controls" autoplay preload loop class="audio" id="bgmusic">
+            <source :src="music" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+        <div class="swith-btn">
+            <img :src="micOn" class="mic-open" @click="handleCloseMic" v-show="micStatus" alt="">
+            <img :src="micOff" @click="handleOpenMic" v-show="!micStatus" alt="">
+        </div>
     </div>
 </template>
 
@@ -39,6 +47,11 @@
     import PageFour from './components/PageFour'
     import PageFive from './components/PageFive'
     import PageSix from './components/PageSix'
+
+    import micOn from '@/assets/img/common/btn_music_off.png'
+    import micOff from '@/assets/img/common/btn_music_on.png'
+
+    import music from '@/assets/img/common/music.mp3'
 
     const wx = require('weixin-js-sdk')
 
@@ -56,13 +69,37 @@
         },
         data() {
             return {
-                stegStatus: 'STEG_ONE'
+                micOn,
+                micOff,
+                music,
+                stegStatus: 'STEG_ONE',
+                micStatus: true
             }
         },
         mounted() {
             this.share()
         },
         methods: {
+            /**
+             * 关闭音乐
+             */
+            handleCloseMic () {
+                const myAuto = document.getElementById('bgmusic');
+                myAuto.pause();
+                this.micStatus = false
+            },
+            /**
+             * 打开音乐
+             */
+            handleOpenMic () {
+                const myAuto = document.getElementById('bgmusic');
+                myAuto.loop = true;
+                myAuto.play();
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    myAuto.play();
+                }, false);
+                this.micStatus = true
+            },
             /**
              * 改变页面显示
              */
@@ -163,5 +200,26 @@
             width: 100%;
             height: 100%;
         }
+        .audio{
+            position: fixed;
+            top: 0;
+            right: 0;
+            opacity: 0;
+            }
+        .swith-btn{
+            position: fixed;
+            top: 1.6rem;
+            right: 1rem;
+            z-index: 9999;
+            img{
+                width: 2rem;
+            }
+        }
+    }
+    .mic-open{
+        animation: rotate 3s linear infinite;
+    }
+    @keyframes rotate{from{transform: rotate(0deg)}
+        to{transform: rotate(360deg)}
     }
 </style>
