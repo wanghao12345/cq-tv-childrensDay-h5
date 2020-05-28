@@ -7,6 +7,9 @@
                 :loop="false"
             >
                 <van-swipe-item>
+                    <PageZero></PageZero>
+                </van-swipe-item>
+                <van-swipe-item>
                     <PageOne></PageOne>
                 </van-swipe-item>
                 <van-swipe-item>
@@ -41,6 +44,7 @@
     import axios from 'axios'
     import Vue from 'vue';
     import {Swipe, SwipeItem} from 'vant';
+    import PageZero from './components/PageZero'
     import PageOne from './components/PageOne'
     import PageTwo from './components/PageTwo'
     import PageThree from './components/PageThree'
@@ -60,6 +64,7 @@
     export default {
         name: "Activity",
         components: {
+            PageZero,
             PageOne,
             PageTwo,
             PageThree,
