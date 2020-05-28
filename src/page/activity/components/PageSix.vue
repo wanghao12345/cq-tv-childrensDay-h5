@@ -60,7 +60,7 @@
                 this.showShare = true
             },
             handleReTouClick() {
-                this.$emit('handleChangeSteg', 'STEG_THREE')
+                this.$emit('handleChangeSteg', 'STEG_TWO')
             }
         }
     }

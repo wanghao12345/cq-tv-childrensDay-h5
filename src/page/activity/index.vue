@@ -83,6 +83,7 @@
         },
         mounted() {
             this.share()
+            this.handleOpenMic()
         },
         methods: {
             /**
