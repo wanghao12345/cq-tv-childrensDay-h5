@@ -57,6 +57,16 @@ const router = new Router({
         keepAlive: false
       },
       component: resolve => require(['@/page/player'], resolve)
+    },
+    {
+      path: '/player/url',
+      name: 'PlayerUrl',
+      meta: {
+        title: '播放',
+        toolBar: true,
+        keepAlive: false
+      },
+      component: resolve => require(['@/page/playerUrl'], resolve)
     }
   ]
 })

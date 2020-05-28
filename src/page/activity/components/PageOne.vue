@@ -8,7 +8,7 @@
                 <img :src="navImg" alt="nav">
             </div>
             <div class="video" @click="handlePlayer">
-
+                <img :src="videoImg" alt="videoImg">
             </div>
         </div>
     </Layout>
@@ -18,6 +18,7 @@
     import Layout from "@/page/activity/components/Layout";
     import titleImg from '@/assets/img/activity/page1/title.png'
     import navImg from '@/assets/img/activity/page1/nav-bg.png'
+    import videoImg from '@/assets/img/activity/page1/video.jpg'
     export default {
         name: "PageOne",
         components: {
@@ -26,7 +27,8 @@
         data () {
             return {
                 titleImg,
-                navImg
+                navImg,
+                videoImg
             }
         },
         mounted() {
@@ -34,13 +36,10 @@
         },
         methods: {
             handlePlayer () {
-                this.$router.push({
-                    path: '/player',
-                    query: {
-                        // url: this.video
-                        url: ''
-                    }
-                })
+                // this.$router.push({
+                //     path: '/player/url'
+                // })
+                window.location.href = 'http://open.iqiyi.com/developer/player_js/coopPlayerIndex.html?vid=fc5ecad7983259ed852886001956876d&tvId=16447350300&accessToken=2.f22860a2479ad60d8da7697274de9346&appKey=3955c3425820435e86d0f4cdfe56f5e7&appId=1368&height=100%25&width=100%25'
             },
         }
 
@@ -71,6 +70,13 @@
             background-color: white;
             border-radius: 0.5rem;
             margin: 0.5rem auto;
+            box-sizing: border-box;
+            padding: 0.2rem;
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 0.5rem;
+            }
        }
    }
 </style>
