@@ -7,7 +7,7 @@
             <div class="book">
                 <img :src="bookImg" alt="bookImg">
             </div>
-            <p>(购书卡以食物为准)</p>
+            <p>(购书卡以实物为准)</p>
         </div>
     </Layout>
 </template>

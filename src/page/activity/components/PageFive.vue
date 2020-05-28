@@ -37,6 +37,9 @@
                     <img :src="btnIcon" alt="btnIcon">
                 </div>
             </div>
+             <div class="btn-wrapper" @click="handleBackClick">
+                <img :src="backIcon" alt="btnIcon">
+            </div>
             <van-loading
                 class="loading"
                 color="#6ACA71"
@@ -57,6 +60,7 @@
     import btnIcon from '@/assets/img/activity/page5/btn.png'
     import uploadIcon from '@/assets/img/activity/page5/upload-icon.png'
     import reUploadIcon from '@/assets/img/activity/page5/reUpload.png'
+    import backIcon from '@/assets/img/common/btn_back.png'
     import axios from 'axios'
 
     Vue.use(Notify).use(Loading)
@@ -69,6 +73,7 @@
             return {
                 btnIcon,
                 uploadIcon,
+                backIcon,
                 reUploadIcon,
                 loading: false,
                 params: {
@@ -83,6 +88,12 @@
 
         },
         methods: {
+            /**
+             * 选择上一页
+             */
+            handleBackClick() {
+                this.$emit('handleChangeSteg', 'STEG_ONE')
+            },
             /**
              * 选择下一页
              */
@@ -284,6 +295,15 @@
                 img {
                     width: 100%;
                 }
+            }
+        }
+        .btn-wrapper{
+            position: absolute;
+            left: 0rem;
+            top: 1.3rem;
+            z-index: 999999;
+            img{
+                width: 3rem;
             }
         }
         .qr-code-box {

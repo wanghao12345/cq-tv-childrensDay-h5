@@ -34,10 +34,9 @@
        img{
             position: absolute;
             width: 16rem;
-            top: 50%;
+            top: 3rem;
             left: 50%;
             margin-left: -8rem;
-            margin-top: -11rem;
        }
    }
 </style>

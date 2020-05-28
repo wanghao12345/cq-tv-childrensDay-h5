@@ -29,7 +29,7 @@
         <div class="steg-wrapper" v-show="stegStatus === 'STEG_THREE'">
             <PageSix @handleChangeSteg="handleChangeSteg"></PageSix>
         </div>
-        <audio controls="controls" autoplay preload loop class="audio" id="bgmusic">
+        <audio controls="controls" autoplay preload loop class="audio" id="backMusic">
             <source :src="music" type="audio/mpeg">
             Your browser does not support the audio tag.
         </audio>
@@ -83,6 +83,7 @@
         },
         mounted() {
             this.share()
+            this.initMic()
             this.handleOpenMic()
         },
         methods: {
@@ -90,7 +91,7 @@
              * 关闭音乐
              */
             handleCloseMic () {
-                const myAuto = document.getElementById('bgmusic');
+                const myAuto = document.getElementById('backMusic');
                 myAuto.pause();
                 this.micStatus = false
             },
@@ -98,13 +99,34 @@
              * 打开音乐
              */
             handleOpenMic () {
-                const myAuto = document.getElementById('bgmusic');
+                const myAuto = document.getElementById('backMusic');
                 myAuto.loop = true;
                 myAuto.play();
                 document.addEventListener("WeixinJSBridgeReady", function () {
                     myAuto.play();
                 }, false);
                 this.micStatus = true
+            },
+            /**
+             * 初始化音乐
+             */
+            initMic () {
+                //--创建页面监听，页面加载完毕--触发音频播放
+                document.addEventListener('DOMContentLoaded', function () {
+                    function audioAutoPlay() {
+                        var musicEle0 = document.getElementById('backMusic');
+                        musicEle0.play();
+                    }
+                    audioAutoPlay();
+                });
+                //--创建触摸监听，当浏览器打开页面时，触摸屏幕触发事件，进行音频播放
+                document.addEventListener('touchstart', function () {
+                    function audioAutoPlay() {
+                        var musicEle0 = document.getElementById('backMusic');
+                            musicEle0.play();
+                    }
+                    audioAutoPlay();
+                });
             },
             /**
              * 改变页面显示
