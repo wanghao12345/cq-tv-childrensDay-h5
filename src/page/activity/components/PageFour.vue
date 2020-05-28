@@ -66,7 +66,7 @@
        height: 100%;
        position: relative;
        box-sizing: border-box;
-       padding: 3rem 0 2rem 0;
+       padding: 2rem 0 1rem 0;
        .main-content-box{
            width: 100%;
            height: 100%;
@@ -77,16 +77,16 @@
            .item-box{
                width: 100%;
                box-sizing: border-box;
-               padding: 0.3rem 0.5rem;
+               padding: 0.2rem;
                h3{
-                   font-size:0.9rem;
+                   font-size:0.85rem;
                    font-family:HappyZcool-2016;
                    font-weight:bold;
                    color:rgba(251,45,45,1);
                    line-height:1.3rem;
                }
                p{
-                   font-size:0.75rem;
+                   font-size:0.7rem;
                    font-family:HappyZcool-2016;
                    font-weight:400;
                    color:rgba(31,33,37,1);

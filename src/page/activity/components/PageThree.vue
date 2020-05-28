@@ -40,8 +40,8 @@
        position: relative;
        .text{
            width: 100%;
-           margin-top: 4rem;
-           margin-bottom: 2rem;
+           margin-top: 3rem;
+           margin-bottom: 1rem;
            img{
                 width: 100%;
            }

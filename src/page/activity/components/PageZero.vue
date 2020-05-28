@@ -37,7 +37,7 @@
             top: 50%;
             left: 50%;
             margin-left: -8rem;
-            margin-top: -9rem;
+            margin-top: -11rem;
        }
    }
 </style>

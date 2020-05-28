@@ -43,9 +43,9 @@
        background-size: 100% 100%;
        img{
             position: absolute;
-            width: 100%;
-            top: 2rem;
-            left: 0;
+            width: 90%;
+            top: 4rem;
+            left: 5%;
        }
        .page-bg-wrapper{
             width: 100%;

@@ -175,7 +175,7 @@
         height: 100%;
         position: relative;
         box-sizing: border-box;
-        padding: 2.5rem 0 2rem 0;
+        padding: 2rem 0 1rem 0;
         .main-content-box {
             width: 100%;
             height: 100%;
@@ -188,16 +188,16 @@
                 box-sizing: border-box;
                 padding: 0.3rem 0.5rem;
                 h3 {
-                    font-size: 0.9rem;
+                    font-size: 0.8rem;
                     font-family: HappyZcool-2016;
                     font-weight: bold;
                     color: rgba(251, 45, 45, 1);
-                    margin-bottom: 0.3rem;
+                    margin-bottom: 0.2rem;
                 }
                 p {
                     input {
                         width: 100%;
-                        height: 2.4rem;
+                        height: 2.3rem;
                         border-radius: 2rem;
                         box-sizing: border-box;
                         border: 1px solid rgba(137, 137, 137, 1);
@@ -224,8 +224,8 @@
                     display: flex;
                     margin-bottom: 0.5rem;
                     .img-box{
-                        width: 5rem;
-                        height: 5rem;
+                        width: 4rem;
+                        height: 4rem;
                         margin-right: 0.5rem;
                         position: relative;
                         background-color: white;

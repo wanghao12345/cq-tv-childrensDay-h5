@@ -213,7 +213,7 @@
             }
         .swith-btn{
             position: fixed;
-            top: 1.6rem;
+            top: 1rem;
             right: 1rem;
             z-index: 9999;
             img{
