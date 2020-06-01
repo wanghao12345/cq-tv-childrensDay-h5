@@ -1,6 +1,6 @@
 <template>
    <div class="page-wrapper">
-        <img :src="lineImg" alt="lineImg">
+        <img :src="lineImg" alt="lineImg" v-if="currentPage === 2">
         <div class="page-bg-wrapper">
 
         </div>
@@ -8,12 +8,17 @@
 </template>
 
 <script>
-    import Layout from "@/page/activity/components/Layout";
     import lineImg from '@/assets/img/activity/page2/line-img.png'
     export default {
         name: "PageTwo",
         components: {
-            Layout
+
+        },
+        props: {
+            currentPage: {
+                type: Number,
+                default: 0
+            }
         },
         data () {
             return {
@@ -46,6 +51,7 @@
             width: 90%;
             top: 4rem;
             left: 5%;
+            animation: move 2s;
        }
        .page-bg-wrapper{
             width: 100%;
@@ -54,4 +60,14 @@
             display: none;
        }
    }
+    @keyframes move {
+        from {
+            opacity: 0;
+            margin-top: 6rem;
+        }
+        to {
+            opacity: 1;
+            margin-top: 0rem;
+        }
+    }
 </style>

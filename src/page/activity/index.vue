@@ -5,29 +5,39 @@
                 style="height: 100%;"
                 vertical
                 :loop="false"
+                @change="handleSwipeChange"
             >
                 <van-swipe-item>
-                    <PageZero></PageZero>
+                    <PageZero :currentPage="currentPage"></PageZero>
                 </van-swipe-item>
                 <van-swipe-item>
-                    <PageOne></PageOne>
+                    <PageOne :currentPage="currentPage"></PageOne>
                 </van-swipe-item>
                 <van-swipe-item>
-                    <PageTwo></PageTwo>
+                    <PageTwo :currentPage="currentPage"></PageTwo>
                 </van-swipe-item>
                 <van-swipe-item>
-                    <PageThree></PageThree>
+                    <PageThree :currentPage="currentPage"></PageThree>
                 </van-swipe-item>
                 <van-swipe-item>
-                    <PageFour @handleChangeSteg="handleChangeSteg"></PageFour>
+                    <PageFour
+                        @handleChangeSteg="handleChangeSteg"
+                        :currentPage="currentPage"
+                    ></PageFour>
                 </van-swipe-item>
             </van-swipe>
         </div>
         <div class="steg-wrapper" v-show="stegStatus === 'STEG_TWO'">
-            <PageFive @handleChangeSteg="handleChangeSteg"></PageFive>
+            <PageFive
+                @handleChangeSteg="handleChangeSteg"
+                :currentPage="stegStatus"
+            ></PageFive>
         </div>
         <div class="steg-wrapper" v-show="stegStatus === 'STEG_THREE'">
-            <PageSix @handleChangeSteg="handleChangeSteg"></PageSix>
+            <PageSix
+                @handleChangeSteg="handleChangeSteg"
+                :currentPage="stegStatus"
+            ></PageSix>
         </div>
         <audio controls="controls" autoplay preload loop class="audio" id="backMusic">
             <source :src="music" type="audio/mpeg">
@@ -75,6 +85,7 @@
         },
         data() {
             return {
+                currentPage: 0,
                 micOn,
                 micOff,
                 music,
@@ -87,6 +98,12 @@
             this.handleOpenMic()
         },
         methods: {
+            /**
+             * 轮播图滑动
+             */
+            handleSwipeChange(index) {
+                this.currentPage = index
+            },
             /**
              * 关闭音乐
              */

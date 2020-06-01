@@ -5,12 +5,17 @@
 </template>
 
 <script>
-    import Layout from "@/page/activity/components/Layout";
     import contentImg from '@/assets/img/activity/page0/content.png'
     export default {
         name: "PageZero",
         components: {
-            Layout
+
+        },
+        props: {
+            currentPage: {
+                type: Number,
+                default: 0
+            }
         },
         data () {
             return {

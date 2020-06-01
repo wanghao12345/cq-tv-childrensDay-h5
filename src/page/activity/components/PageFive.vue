@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <div class="page-wrapper">
+        <div class="page-wrapper" v-if="currentPage === 'STEG_TWO'">
             <div class="main-content-box">
                 <div class="item-box">
                     <h3>短视频名称</h3>
@@ -46,7 +46,7 @@
                 v-if="loading"
             />
         </div>
-    
+
     </Layout>
 </template>
 
@@ -68,6 +68,12 @@
         name: "PageFive",
         components: {
             Layout
+        },
+        props: {
+            currentPage: {
+                type: String,
+                default: 'STEG_TWO'
+            }
         },
         data() {
             return {
@@ -194,6 +200,7 @@
         position: relative;
         box-sizing: border-box;
         padding: 2rem 0 1rem 0;
+        animation: move 2s;
         .main-content-box {
             width: 100%;
             height: 100%;
@@ -321,6 +328,16 @@
                 color: rgba(255, 255, 255, 1);
                 text-align: center;
             }
+        }
+    }
+    @keyframes move {
+        from {
+            opacity: 0;
+            margin-top: 6rem;
+        }
+        to {
+            opacity: 1;
+            margin-top: 0rem;
         }
     }
 </style>

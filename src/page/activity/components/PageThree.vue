@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <div class="page-wrapper">
+        <div class="page-wrapper" v-if="currentPage === 3">
             <div class="text">
                 <img :src="textImg" alt="textImg">
             </div>
@@ -20,6 +20,12 @@
         name: "PageThree",
         components: {
             Layout
+        },
+        props: {
+            currentPage: {
+                type: Number,
+                default: 0
+            }
         },
         data () {
             return {
@@ -42,6 +48,7 @@
            width: 100%;
            margin-top: 3rem;
            margin-bottom: 1rem;
+           animation: move 2s;
            img{
                 width: 100%;
            }
@@ -58,6 +65,16 @@
            font-size: 0.6rem;
            color: black;
            font-weight: bold;
+       }
+   }
+   @keyframes move {
+       from {
+           opacity: 0;
+           margin-top: 6rem;
+       }
+       to {
+           opacity: 1;
+           margin-top: 3rem;
        }
    }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <div class="page-wrapper">
+        <div class="page-wrapper" v-if="currentPage === 'STEG_THREE'">
             <div class="suc-icon-wrapper">
                 <img :src="SucIcon" alt="SucIcon">
             </div>
@@ -12,8 +12,8 @@
                     <img :src="BtnIcon2" alt="BtnIcon2">
                 </div>
             </div>
-            <van-popup 
-                v-model="showShare" 
+            <van-popup
+                v-model="showShare"
                 position="top"
             >
                 <div class="share-box">
@@ -39,6 +39,12 @@
         name: "PageSix",
         components: {
             Layout
+        },
+        props: {
+            currentPage: {
+                type: String,
+                default: 'STEG_THREE'
+            }
         },
         data () {
             return {
@@ -71,6 +77,7 @@
        height: 100%;
        box-sizing: border-box;
        padding-top: 5rem;
+       animation: move 2s;
        .suc-icon-wrapper{
            width: 100%;
            text-align: center;
@@ -116,6 +123,16 @@
            img{
                width: 100%;
            }
+       }
+   }
+   @keyframes move {
+       from {
+           opacity: 0;
+           margin-top: 6rem;
+       }
+       to {
+           opacity: 1;
+           margin-top: 0rem;
        }
    }
 </style>

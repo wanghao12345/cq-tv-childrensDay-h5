@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <div class="page-wrapper">
+        <div class="page-wrapper" v-if="currentPage === 4">
             <div class="main-content-box">
                 <div class="item-box">
                     <h3>参与规则：</h3>
@@ -40,6 +40,12 @@
         components: {
             Layout
         },
+        props: {
+            currentPage: {
+                type: Number,
+                default: 0
+            }
+        },
         data () {
             return {
               btnIcon,
@@ -74,6 +80,7 @@
            border-radius: 0.5rem;
            box-sizing: border-box;
            padding: 0.5rem;
+           animation: move 2s;
            .item-box{
                width: 100%;
                box-sizing: border-box;
@@ -124,6 +131,16 @@
                color:rgba(255,255,255,1);
                text-align: center;
            }
+       }
+   }
+   @keyframes move {
+       from {
+           opacity: 0;
+           margin-top: 6rem;
+       }
+       to {
+           opacity: 1;
+           margin-top: 0rem;
        }
    }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <div class="page-wrapper">
+        <div class="page-wrapper" v-if="currentPage === 1">
             <div class="title">
                 <img :src="titleImg" alt="title">
             </div>
@@ -23,6 +23,12 @@
         name: "PageOne",
         components: {
             Layout
+        },
+        props: {
+            currentPage: {
+                type: Number,
+                default: 0
+            }
         },
         data () {
             return {
@@ -51,6 +57,7 @@
        width: 100%;
        height: 100%;
        position: relative;
+       animation: move 2s;
        .title{
            margin-top: 3rem;
            img{
@@ -77,6 +84,16 @@
                 height: 100%;
                 border-radius: 0.5rem;
             }
+       }
+   }
+   @keyframes move {
+       from {
+           opacity: 0;
+           margin-top: 6rem;
+       }
+       to {
+           opacity: 1;
+           margin-top: 0rem;
        }
    }
 </style>
